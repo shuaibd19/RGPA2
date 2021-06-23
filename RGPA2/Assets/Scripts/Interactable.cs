@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// <summary>
 /// implements the ability to be interacted with
 /// </summary>
@@ -17,7 +18,14 @@ public class Interactable : MonoBehaviour
             var npc = GetComponent<NPCInteract>();
             if (npc != null)
             {
-                Debug.Log(npc.dialogue);
+                //if the menu is currently false
+                if (!SceneLoading.instance.studentScene)
+                {
+                    //load the menu scene
+                    SceneLoading.instance.LoadSceneAsync("StudentScene");
+                    //set the menu to being true
+                    SceneLoading.instance.setScene();
+                }
             }
         }
     }
