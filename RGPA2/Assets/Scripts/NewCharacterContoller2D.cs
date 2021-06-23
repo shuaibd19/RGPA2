@@ -9,7 +9,7 @@ public class NewCharacterContoller2D : MonoBehaviour
     [SerializeField] float moveSpeed = 6;
     [SerializeField] float jumpHeight = 2;
     [SerializeField] float gravity = 20;
-    public bool facingRight = true;
+    public bool facingRight;
 
     [Range(0, 10), SerializeField] float airControl = 5;
 
@@ -27,16 +27,6 @@ public class NewCharacterContoller2D : MonoBehaviour
     private void FixedUpdate()
     {
         var input = new Vector2(Input.GetAxis("Horizontal"), 0f);
-
-        //checking for look direction
-        if (moveDirection.x >= 0 && !facingRight)
-        {
-            facingRight = true;
-        }
-        else if (moveDirection.x < 0 && facingRight)
-        {
-            facingRight = false;
-        }
 
         input *= moveSpeed;
 
@@ -67,7 +57,17 @@ public class NewCharacterContoller2D : MonoBehaviour
 
         transform.Translate(moveDirection * Time.deltaTime);
 
-        
+        //checking for look direction
+        if (moveDirection.x > 0 && !facingRight)
+        {
+            facingRight = true;
+            Debug.Log("Right");
+        }
+        else if (moveDirection.x < 0 && facingRight)
+        {
+            facingRight = false;
+            Debug.Log("Left");
+        }
     }
 
     private void CheckForBottomCollision()
