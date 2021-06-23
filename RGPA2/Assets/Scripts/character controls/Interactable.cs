@@ -18,14 +18,8 @@ public class Interactable : MonoBehaviour
             var npc = GetComponent<NPCInteract>();
             if (npc != null)
             {
-                //if the menu is currently false
-                if (!SceneLoading.instance.studentScene)
-                {
-                    //load the menu scene
-                    SceneLoading.instance.LoadSceneAsync("StudentScene");
-                    //set the menu to being true
-                    SceneLoading.instance.setScene();
-                }
+                SceneLoading.instance.LoadSceneAsync("StudentScene");
+
             }
         }
     }
