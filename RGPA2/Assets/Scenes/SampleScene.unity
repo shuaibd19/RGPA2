@@ -136,7 +136,8 @@ GameObject:
   - component: {fileID: 401788855}
   - component: {fileID: 401788854}
   - component: {fileID: 401788858}
-  m_Layer: 0
+  - component: {fileID: 401788859}
+  m_Layer: 6
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,6 +159,7 @@ MonoBehaviour:
   moveSpeed: 6
   jumpHeight: 2
   gravity: 20
+  facingRight: 1
   airControl: 5
 --- !u!70 &401788855
 CapsuleCollider2D:
@@ -234,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401788853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.61, y: -0.56, z: 0}
+  m_LocalPosition: {x: -4.61, y: -2.58, z: 0}
   m_LocalScale: {x: 0.96798325, y: 1.7369, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -261,6 +263,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &401788859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401788853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2c167a859fd6a4c9bef65cc330c75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionKey: 102
+  interactingRange: 1
 --- !u!1 &421521726
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,9 +480,11 @@ GameObject:
   - component: {fileID: 1398575211}
   - component: {fileID: 1398575210}
   - component: {fileID: 1398575209}
+  - component: {fileID: 1398575212}
+  - component: {fileID: 1398575213}
   m_Layer: 0
   m_Name: npc
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,9 +574,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398575208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.87, y: -3.58, z: 0}
+  m_LocalPosition: {x: 3.87, y: -3.49, z: 0}
   m_LocalScale: {x: 0.96798325, y: 1.7369, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1398575212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398575208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6812f40fb2bd24fbff713e1adf181c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: boasdoajs
+--- !u!114 &1398575213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398575208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0689bdb7b6a128468e3dd7c26a3cd73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
