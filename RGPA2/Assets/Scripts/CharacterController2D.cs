@@ -52,5 +52,7 @@ public class CharacterController2D : MonoBehaviour
 
         //assign the x value of the velocity 
         transform.Translate(velocity * Time.deltaTime);
+
+        //checking for collisions
     }
 }
